@@ -1,0 +1,49 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Tips</title>
+    <!-- Include Bootstrap CSS -->
+{#    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">#}
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Tips List</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tips</th>
+                        <th>Details</th>
+                        <th>Date</th>
+                        <th>Expert</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tip in data %}
+                    <tr>
+                        <td>{{ tip.tips }}</td>
+                        <td>{{ tip.details }}</td>
+                        <td>{{ tip.date }}</td>
+                        <td>{{ tip.EXPERT.name }}</td>
+                        <td>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center">No tips found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (optional for responsive components) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,59 @@
+
+{% extends 'Expert/expertindex.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Dataset Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add Dataset Entry</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="question">Question</label>
+        <input type="text" id="question" name="question" required placeholder="Enter the question">
+
+        <label for="answer">Answer</label>
+        <input type="text" id="answer" name="answer" required placeholder="Enter the answer">
+
+
+
+
+
+        <button type="submit" name="submit">Add Entry</button>
+    </form>
+</body>
+</html>
+{% endblock %}
